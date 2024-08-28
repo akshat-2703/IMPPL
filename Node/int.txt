@@ -1,0 +1,34 @@
+//File System Module
+
+
+const fs = require("fs") ;
+//Reading the File asynchronously
+fs.readFile("fs.txt","utf8",(err,data) => {
+    if(err){
+        return ;
+    }
+    console.log("File Content :",data);
+});
+
+const contentToWrite = "Some Content" ;
+//write a file asynchronously 
+fs.writeFile("fs.txt",contentToWrite,"utf8",(err)=>{
+    if(err){
+        return ;
+    }
+    console.log("Write operation complete");
+});
+
+
+//Path Module
+
+const path = require('path') ;
+
+//Joining Path Segments 
+const fullPath = path.join('/docs','file.txt') ;
+console.log(fullPath);
+
+
+//Parsing Path
+const parsedPath = path.parse('/docs/file.txt') ;
+console.log(parsedPath);
